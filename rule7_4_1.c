@@ -12,6 +12,6 @@ int main()
   const char *name = "New Holland";
   modify(&name);
   //printf("My name is %s\n", name);
-    Wprintf(L"My name is %s\n", name);
+    wprintf(L"My name is %s\n", name);
   return 0;
 }
