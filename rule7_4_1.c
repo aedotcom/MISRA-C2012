@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <wchar.h>
 
 void modify(char **s)
 {
