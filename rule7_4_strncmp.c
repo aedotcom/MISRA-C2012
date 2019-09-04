@@ -59,13 +59,13 @@ char mdata_str1[] = "PORT";
 
 if(0 == strncmp(mdata, "PORT" , 4))
 {
-  i = atoi( mdata + 4 ) - 1;
+  i = (int)(atoi( mdata + 4 ) - 1);
   if ( ( i < 0 ) || ( i >= 9 ) ) i = -1;
 }
 
 
 if      ( STRNCMP_L(mdata, "PORT" , 4 ) ) {
-  i = atoi( mdata + 4 ) - 1;
+  i = (atoi( mdata + 4 ) - 1);
   if ( ( i < 0 ) || ( i >= 9 ) ) i = -1;
 }
 else if ( STRNCMP_L(mdata , "CM" , 2 ) ) {
@@ -75,7 +75,7 @@ else if ( STRNCMP_L(mdata , "CM" , 2 ) ) {
 else {
   if ( idalso ) { // 2006.11.17
     if ( ( mdata[0] >= '1' ) && ( mdata[0] <= '9' ) ) {
-      i = atoi( mdata ) - 1;
+      i = ((int)atoi( mdata ) - 1);
       if ( ( i < 0 ) || ( i >= 9 ) ) i = -1;
     }
     else {
