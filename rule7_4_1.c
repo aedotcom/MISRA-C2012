@@ -1,5 +1,6 @@
-//#include <stdio.h>
-#include <wchar.h>
+#include <stdio.h>
+
+void modify(char **s);
 
 void modify(char **s)
 {
@@ -11,7 +12,7 @@ int main()
 {
   const char *name = "New Holland";
   modify(&name);
-  //printf("My name is %s\n", name);
-    wprintf(L"My name is %s\n", name);
+  printf("My name is %s\n", name);
+  
   return 0;
 }
