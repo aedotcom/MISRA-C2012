@@ -53,29 +53,64 @@ return i;
 int Get_LOT_ID_From_String2(  char *mdata , BOOL idalso )
 {
 int i;
+int si;
+char *nptr;
 //const char *mdata = mdata_str;
 const char *mdata_str = "PORT";
 char mdata_str1[] = "PORT";
 
 if(0 == strncmp(mdata, "PORT" , 4))
 {
-  i = (int)(atoi( mdata + 4 ) - 1);
+  if( mdata )
+  {
+    si = (int)strtol(mdata + 4, &nptr, 10) -1;
+  }
+  else
+  {
+    si = -1
+  }
+  //i = (int)(atoi( mdata + 4 ) - 1);
+
   if ( ( i < 0 ) || ( i >= 9 ) ) i = -1;
 }
 
 
 if      ( STRNCMP_L(mdata, "PORT" , 4 ) ) {
-  i = (atoi( mdata + 4 ) - 1);
+  //i = (atoi( mdata + 4 ) - 1);
+  if( mdata )
+  {
+    si = (int)strtol(mdata + 4, &nptr, 10) -1;
+  }
+  else
+  {
+    si = -1
+  }
   if ( ( i < 0 ) || ( i >= 9 ) ) i = -1;
 }
 else if ( STRNCMP_L(mdata , "CM" , 2 ) ) {
-  i = atoi( mdata + 2 ) - 1;
+  //i = atoi( mdata + 2 ) - 1;
+  if( mdata )
+  {
+    si = (int)strtol(mdata + 2, &nptr, 10) -1;
+  }
+  else
+  {
+    si = -1
+  }
   if ( ( i < 0 ) || ( i >= 9 ) ) i = -1;
 }
 else {
   if ( idalso ) { // 2006.11.17
     if ( ( mdata[0] >= '1' ) && ( mdata[0] <= '9' ) ) {
-      i = ((int)atoi( mdata ) - 1);
+      //i = ((int)atoi( mdata ) - 1);
+      if( mdata )
+      {
+        si = (int)strtol(mdata, &nptr, 10) -1;
+      }
+      else
+      {
+        si = -1
+      }
       if ( ( i < 0 ) || ( i >= 9 ) ) i = -1;
     }
     else {
