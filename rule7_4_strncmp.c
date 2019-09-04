@@ -1,18 +1,4 @@
-#include <stdio.h>
-#include <process.h>
-#include <string.h>
-#include <stdlib.h>
-#include <conio.h>
-#include <math.h>
-#include <windows.h>
-#include <time.h>
-#include <assert.h>
-#include <malloc.h>
-
-#include <windows.h>
-#include <windowsx.h>
-
-BOOL STRNCMP_L (char *Str1, char *Str2, size_t size);
+#include "test.h"
 
 int Get_LOT_ID_From_String( const char *mdata , BOOL idalso )
 {
@@ -104,10 +90,11 @@ return i;
 }
 
 
-
+/*
 BOOL STRNCMP_L( char *String1 , char *String2 , size_t Length )
 {
 	if ( _strnicmp( String1 , String2 , Length ) == 0 ) return TRUE;
 	return FALSE;
 
 }
+*/
